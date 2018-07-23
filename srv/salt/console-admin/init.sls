@@ -1,8 +1,5 @@
-console-admin.repositories:
-  pkgrepo.managed:
-    - name: software-for-life
-    - enabled: true
-    - baseurl: https://download.opensuse.org/repositories/home:/binary_sequence:/software-for-life/openSUSE_Factory_ARM/
+include:
+  - software-for-life-repo
 
 console-admin.packages:
   pkg.installed:
@@ -11,7 +8,7 @@ console-admin.packages:
       - fix-filenames-broken-encoding
       - vim
     - require:
-      - pkgrepo: console-admin.repositories
+      - pkgrepo: software-for-life-repo
 
 vim.extended_config:
   file.managed:
