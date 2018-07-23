@@ -6,6 +6,10 @@ console-admin.packages:
     - pkgs:
       - bash-helper
       - fix-filenames-broken-encoding
+      - htop
+      - mosh
+      - tmux
+      - tree
       - vim
     - require:
       - pkgrepo: software-for-life-repo
