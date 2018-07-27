@@ -14,6 +14,13 @@ console-admin.packages:
     - require:
       - pkgrepo: software-for-life-repo
 
+vim.extented_config.directory:
+  file.directory:
+    - name: /etc/binary-sequence
+    - user: root
+    - group: salt
+    - mode: 755
+
 vim.extended_config:
   file.managed:
     - name: /etc/binary-sequence/vimrc
@@ -23,6 +30,7 @@ vim.extended_config:
     - mode: 644
     - require:
       - pkg: console-admin.packages
+      - file: vim.extented_config.directory
 
 vim.main_config:
   file.managed:
