@@ -9,6 +9,7 @@ My personal salt states
 
 - console-admin
 - console-developer
+- docker-admin
 - laptop
 - workstation
 - openqa-webui
