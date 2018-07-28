@@ -1,5 +1,5 @@
 include:
-  - software-for-life
+  - software-for-life.repository
 
 docker-admin.packages:
   pkg.installed:

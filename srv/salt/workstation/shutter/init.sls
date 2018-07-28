@@ -1,5 +1,5 @@
 include:
-  - software-for-life
+  - software-for-life.config_directory
 
 shutter.package_installed:
   pkg.installed:
