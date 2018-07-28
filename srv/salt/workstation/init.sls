@@ -1,21 +1,14 @@
 include:
   - workstation.shutter
+  - workstation.vscode
 
-vscode.repository:
-  pkgrepo.managed:
-    - name: Visual Studio Code
-    - enable: true
-    - baseurl:
-        https://packages.microsoft.com/yumrepos/vscode
-
-workstation.packages_istalled:
+workstation.packages_installed:
   pkg.installed:
     - pkgs:
-      - code
       - terminator
     - require:
-      - pkgrepo: vscode.repository
       - pkg: shutter.package_installed
+      - pkg: vscode.package_installed
 
 workstation.shutter_configured:
   require:
