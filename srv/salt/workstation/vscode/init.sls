@@ -10,8 +10,7 @@ vscode.repository:
 
 vscode.package_installed:
   pkg.installed:
-    - pkgs:
-      - code
+    - name: code
     - require:
       - pkgrepo: vscode.repository
 

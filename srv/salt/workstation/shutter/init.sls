@@ -3,8 +3,7 @@ include:
 
 shutter.package_installed:
   pkg.installed:
-    - pkgs:
-      - shutter
+    - name: shutter
 
 shutter.config_directory_created:
   file.directory:
