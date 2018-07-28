@@ -1,14 +1,13 @@
 include:
   - workstation.shutter
+  - workstation.terminator
   - workstation.vscode
 
 workstation.packages_installed:
-  pkg.installed:
-    - pkgs:
-      - terminator
-    - require:
-      - pkg: shutter.package_installed
-      - pkg: vscode.package_installed
+  require:
+    - pkg: shutter.package_installed
+    - pkg: terminator.package_installed
+    - pkg: vscode.package_installed
 
 workstation.shutter_configured:
   require:
