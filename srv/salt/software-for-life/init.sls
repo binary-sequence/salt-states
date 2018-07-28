@@ -12,3 +12,10 @@ software-for-life.repository:
         https://download.opensuse.org/repositories/home:/binary_sequence:/software-for-life/openSUSE_Leap_15.0/
   {% endif %}
 {% endif %}
+
+software-for-life.config_directory:
+  file.directory:
+    - name: /etc/software-for-life
+    - user: root
+    - group: salt
+    - mode: 755
