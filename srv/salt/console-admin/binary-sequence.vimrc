@@ -1,3 +1,6 @@
+" Color syntax for known file formats
+syntax enable
+
 " Automatically create a backup file with old content when saving new changes.
 set backup
 
@@ -54,4 +57,3 @@ set wrap "Wrap lines
 
 " Always show the status line
 set laststatus=2
-
