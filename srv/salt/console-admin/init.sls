@@ -1,5 +1,5 @@
 include:
-  - software-for-life-repo
+  - software-for-life
 
 console-admin.packages:
   pkg.installed:
@@ -12,7 +12,7 @@ console-admin.packages:
       - tree
       - vim
     - require:
-      - pkgrepo: software-for-life-repo
+      - pkgrepo: software-for-life.repository
 
 vim.extented_config.directory:
   file.directory:

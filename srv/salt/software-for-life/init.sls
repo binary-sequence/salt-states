@@ -1,4 +1,4 @@
-software-for-life-repo:
+software-for-life.repository:
   pkgrepo.managed:
     - name: software-for-life
     - enabled: true

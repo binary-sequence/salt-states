@@ -1,12 +1,12 @@
 include:
-  - software-for-life-repo
+  - software-for-life
 
 docker-admin.packages:
   pkg.installed:
     - pkgs:
       - docker-helper
     - require:
-      - pkgrepo: software-for-life-repo
+      - pkgrepo: software-for-life.repository
   service.running:
     - name: docker.service
     - enable: true

@@ -1,9 +1,9 @@
 include:
-  - software-for-life-repo
+  - software-for-life
 
 console-developer.packages:
   pkg.installed:
     - pkgs:
       - git-helper
     - require:
-      - pkgrepo: software-for-life-repo
+      - pkgrepo: software-for-life.repository
