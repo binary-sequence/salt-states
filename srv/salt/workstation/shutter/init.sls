@@ -68,7 +68,6 @@ shutter.user_main_config_created:
       - file: shutter.main_config_file_created
       - file: shutter.user_picture_directory_created
 
-
 shutter.user_drawingtool_config_created:
   file.symlink:
     - name: /home/sergio/.shutter/drawingtool.xml
