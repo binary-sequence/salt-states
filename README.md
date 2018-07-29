@@ -6,6 +6,8 @@ My personal salt states
 1. [Available roles](#1-available-roles)
 2. [Undestanding directory tree](#2-understanding-directory-tree)
 3. [Configuration for salt master](#3-configuration-for-salt-master)
+4. [Configuration for salt minions](#4-configuration-for-salt-minions)
+5. [Applying salt states](#5-applying-salt-states)
 
 ## 1. Available roles
 
@@ -16,6 +18,7 @@ My personal salt states
 - workstation
 - openqa-webui
 - openqa-worker
+- salt-master
 
 ## 2. Undestanding directory tree
 
@@ -49,4 +52,81 @@ These packages are not available in the official repositories, so the personal r
 ```bash
 user@pc:~$ sudo zypper addrepo <not yet available> binary-sequence
 user@pc:~$ sudo zypper install binary-sequence:binary-sequence-salt-master
+```
+
+## 4. Configuration for salt minions
+
+By default, salt-minions expect the salt-master to have the hostname _salt_. Since I am using **rpi2b**, this have to be configured on each minion on its configuration file.
+
+/etc/salt/minion
+
+```salt
+# ... other configuration ...
+# Set the location of the salt master server. If the master server cannot be
+# resolved, then the minion will fail to start.
+master: rpi2b
+# ... other configuration ...
+```
+
+Then, I have the following minions with different roles:
+
+#### rpi2b
+
+/etc/salt/grains
+
+```salt
+roles:
+  - salt-master
+  - console-admin
+  - console-developer
+```
+
+#### eva-leap15
+
+/etc/salt/grains
+
+```salt
+roles:
+  - console-admin
+  - console-developer
+  - docker-admin
+  - workstation
+  - openqa-webui
+  - openqa-worker
+```
+
+#### adam-tw
+
+/etc/salt/grains
+
+```salt
+roles:
+  - console-admin
+  - console-developer
+  - docker-admin
+  - workstation
+  - laptop
+```
+
+#### sergio-latitude
+
+/etc/salt/grains
+
+```salt
+roles:
+  - console-admin
+  - console-developer
+  - docker-admin
+  - workstation
+  - openqa-webui
+  - openqa-worker
+  - laptop
+```
+
+## 5. Applying salt states
+
+Once the master and the minions are properly configured, the states can be applied with the following command:
+
+```bash
+sergio@rpi2b:~$ sudo salt '*' state.apply
 ```
