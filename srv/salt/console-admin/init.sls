@@ -1,5 +1,6 @@
 include:
   - software-for-life.repository
+  - console-admin.tmux
   - console-admin.vim
 
 console-admin.packages:
@@ -9,8 +10,8 @@ console-admin.packages:
       - fix-filenames-broken-encoding
       - htop
       - mosh
-      - tmux
       - tree
     - require:
       - pkgrepo: software-for-life.repository
+      - pkg: tmux.package
       - pkg: vim.package
