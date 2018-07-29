@@ -125,7 +125,31 @@ roles:
 
 ## 5. Applying salt states
 
-Once the master and the minions are properly configured, the states can be applied with the following command:
+Once the master and the minions are properly configured, the services have to be started:
+
+```bash
+sergio@rpi2b:~$ sudo systemctl enable salt-master.service
+sergio@rpi2b:~$ sudo systemctl start salt-master.service
+sergio@rpi2b:~$ sudo systemctl enable salt-minion.service
+sergio@rpi2b:~$ sudo systemctl start salt-minion.service
+```
+
+```bash
+sergio@eva-leap15:~$ sudo systemctl enable salt-minion.service
+sergio@eva-leap15:~$ sudo systemctl start salt-minion.service
+```
+
+```bash
+sergio@adam-tw:~$ sudo systemctl enable salt-minion.service
+sergio@adam-tw:~$ sudo systemctl start salt-minion.service
+```
+
+```bash
+sergio@sergio-latitude:~$ sudo systemctl enable salt-minion.service
+sergio@sergio-latitude:~$ sudo systemctl start salt-minion.service
+```
+
+Then, the states can be applied with the following command:
 
 ```bash
 sergio@rpi2b:~$ sudo salt '*' state.apply
