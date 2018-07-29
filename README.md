@@ -4,7 +4,7 @@ My personal salt states
 ## Index
 
 1. [Available roles](#1-available-roles)
-2. [Undestanding directory tree](#2-understanding-directory-tree)
+2. [Understanding directory tree](#2-understanding-directory-tree)
 3. [Configuration for salt master](#3-configuration-for-salt-master)
 4. [Configuration for salt minions](#4-configuration-for-salt-minions)
 5. [Applying salt states](#5-applying-salt-states)
@@ -20,7 +20,7 @@ My personal salt states
 - openqa-worker
 - salt-master
 
-## 2. Undestanding directory tree
+## 2. Understanding directory tree
 
 - Each role has its own directory.
 ```bash
