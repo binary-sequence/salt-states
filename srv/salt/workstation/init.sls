@@ -5,11 +5,13 @@ include:
 
 workstation.packages_installed:
   require:
-    - pkg: shutter.package_installed
-    - pkg: terminator.package_installed
-    - pkg: vscode.package_installed
+    - pkg: shutter.installed
+    - pkg: terminator.installed
+    - pkg: vscode.installed
 
-workstation.shutter_configured:
+workstation.programs_configured:
   require:
-    - file: shutter.user_main_config_created
-    - file: shutter.user_drawingtool_config_created
+    - file: shutter.user_config_file_created
+    - file: shutter.user_drawingtool_config_file_created
+    - file: terminator.user_config_file_created
+    - file: vscode.user_config_file_created

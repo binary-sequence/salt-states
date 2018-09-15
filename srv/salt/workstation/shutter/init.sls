@@ -1,7 +1,7 @@
 include:
-  - software-for-life.config_directory
+  - software-for-life.config_directory_created
 
-shutter.package_installed:
+shutter.installed:
   pkg.installed:
     - name: shutter
 
@@ -12,8 +12,8 @@ shutter.config_directory_created:
     - group: salt
     - mode: 755
     - require:
-      - pkg: shutter.package_installed
-      - file: software-for-life.config_directory
+      - pkg: shutter.installed
+      - file: software-for-life.config_directory_created
 
 shutter.main_config_file_created:
   file.managed:
@@ -23,7 +23,7 @@ shutter.main_config_file_created:
     - group: root
     - mode: 644
     - require:
-      - pkg: shutter.package_installed
+      - pkg: shutter.installed
       - file: shutter.config_directory_created
 
 shutter.drawingtool_config_file_created:
@@ -34,7 +34,7 @@ shutter.drawingtool_config_file_created:
     - group: root
     - mode: 644
     - require:
-      - pkg: shutter.package_installed
+      - pkg: shutter.installed
       - file: shutter.config_directory_created
 
 shutter.user_config_directory_created:
@@ -44,18 +44,18 @@ shutter.user_config_directory_created:
     - group: users
     - mode: 700
     - require:
-      - pkg: shutter.package_installed
+      - pkg: shutter.installed
 
-shutter.user_picture_directory_created:
+shutter.user_pictures_directory_created:
   file.directory:
     - name: /home/sergio/Pictures/shutter
     - user: sergio
     - group: users
     - mode: 755
     - require:
-      - pkg: shutter.package_installed
+      - pkg: shutter.installed
 
-shutter.user_main_config_created:
+shutter.user_config_file_created:
   file.symlink:
     - name: /home/sergio/.shutter/settings.xml
     - target: /etc/software-for-life/shutter/settings.xml
@@ -65,9 +65,9 @@ shutter.user_main_config_created:
     - require:
       - file: shutter.user_config_directory_created
       - file: shutter.main_config_file_created
-      - file: shutter.user_picture_directory_created
+      - file: shutter.user_pictures_directory_created
 
-shutter.user_drawingtool_config_created:
+shutter.user_drawingtool_config_file_created:
   file.symlink:
     - name: /home/sergio/.shutter/drawingtool.xml
     - target: /etc/software-for-life/shutter/drawingtool.xml

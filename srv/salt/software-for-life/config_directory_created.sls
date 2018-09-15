@@ -1,4 +1,4 @@
-software-for-life.config_directory:
+software-for-life.config_directory_created:
   file.directory:
     - name: /etc/software-for-life
     - user: root

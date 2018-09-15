@@ -1,7 +1,7 @@
 include:
-  - software-for-life.config_directory
+  - software-for-life.config_directory_created
 
-terminator.package_installed:
+terminator.installed:
   pkg.installed:
     - name: terminator
 
@@ -12,8 +12,8 @@ terminator.config_directory_created:
     - group: salt
     - mode: 755
     - require:
-      - pkg: terminator.package_installed
-      - file: software-for-life.config_directory
+      - pkg: terminator.installed
+      - file: software-for-life.config_directory_created
 
 terminator.main_config_file_created:
   file.managed:
@@ -23,7 +23,7 @@ terminator.main_config_file_created:
     - group: root
     - mode: 644
     - require:
-      - pkg: terminator.package_installed
+      - pkg: terminator.installed
       - file: terminator.config_directory_created
 
 terminator.user_config_directory_created:
@@ -33,9 +33,9 @@ terminator.user_config_directory_created:
     - group: users
     - mode: 700
     - require:
-      - pkg: terminator.package_installed
+      - pkg: terminator.installed
 
-terminator.user_main_config_created:
+terminator.user_config_file_created:
   file.symlink:
     - name: /home/sergio/.config/terminator/config
     - target: /etc/software-for-life/terminator/config

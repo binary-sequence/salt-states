@@ -1,5 +1,5 @@
 include:
-  - software-for-life.config_directory
+  - software-for-life.config_directory_created
 
 vscode.repository:
   pkgrepo.managed:
@@ -8,7 +8,7 @@ vscode.repository:
     - baseurl:
         https://packages.microsoft.com/yumrepos/vscode
 
-vscode.package_installed:
+vscode.installed:
   pkg.installed:
     - name: code
     - require:
@@ -21,8 +21,8 @@ vscode.config_directory_created:
     - group: salt
     - mode: 755
     - require:
-      - pkg: vscode.package_installed
-      - file: software-for-life.config_directory
+      - pkg: vscode.installed
+      - file: software-for-life.config_directory_created
 
 vscode.main_config_file_created:
   file.managed:
@@ -32,7 +32,7 @@ vscode.main_config_file_created:
     - group: root
     - mode: 644
     - require:
-      - pkg: vscode.package_installed
+      - pkg: vscode.installed
       - file: vscode.config_directory_created
 
 vscode.user_config_directory_created:
@@ -42,9 +42,9 @@ vscode.user_config_directory_created:
     - group: users
     - mode: 700
     - require:
-      - pkg: vscode.package_installed
+      - pkg: vscode.installed
 
-vscode.user_main_config_created:
+vscode.user_config_file_created:
   file.symlink:
     - name: /home/sergio/.config/Code/User/settings.json
     - target: /etc/software-for-life/vscode/settings.json

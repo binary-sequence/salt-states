@@ -1,11 +1,11 @@
 include:
-  - software-for-life.config_directory
+  - software-for-life.config_directory_created
 
-vim.package:
+vim.installed:
   pkg.installed:
     - name: vim
 
-vim.extended_config:
+vim.extended_config_file_created:
   file.managed:
     - name: /etc/software-for-life/vimrc
     - source: salt://console-admin/vim/binary-sequence.vimrc
@@ -13,10 +13,10 @@ vim.extended_config:
     - group: root
     - mode: 644
     - require:
-      - pkg: vim.package
-      - file: software-for-life.config_directory
+      - pkg: vim.installed
+      - file: software-for-life.config_directory_created
 
-vim.main_config:
+vim.main_config_file_created:
   file.managed:
     - name: /etc/vimrc
     - source: salt://console-admin/vim/vimrc
@@ -24,4 +24,4 @@ vim.main_config:
     - group: root
     - mode: 644
     - require:
-      - file: vim.extended_config
+      - file: vim.extended_config_file_created
