@@ -5,9 +5,9 @@ include:
 
 workstation.packages_installed:
   require:
-    - pkg: shutter.package_installed
-    - pkg: terminator.package_installed
-    - pkg: vscode.package_installed
+    - pkg: shutter.installed
+    - pkg: terminator.installed
+    - pkg: vscode.installed
 
 workstation.shutter_configured:
   require:

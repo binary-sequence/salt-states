@@ -1,7 +1,7 @@
 include:
-  - software-for-life.config_directory
+  - software-for-life.config_directory_created
 
-vim.package:
+vim.installed:
   pkg.installed:
     - name: vim
 
@@ -13,8 +13,8 @@ vim.extended_config:
     - group: root
     - mode: 644
     - require:
-      - pkg: vim.package
-      - file: software-for-life.config_directory
+      - pkg: vim.installed
+      - file: software-for-life.config_directory_created
 
 vim.main_config:
   file.managed:

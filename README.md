@@ -33,7 +33,7 @@ user@pc:~$ sudo salt '*' state.apply workstation.shutter
 ```
 - States shared between different roles or states have their own directory
 ```bash
-user@pc:~$ sudo salt '*' state.apply software-for-life.repository
+user@pc:~$ sudo salt '*' state.apply software-for-life.repository_added
 ```
 
 ## 3. Configuration for salt master
