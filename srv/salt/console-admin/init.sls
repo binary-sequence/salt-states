@@ -7,7 +7,6 @@ include:
 console-admin.packages_installed:
   pkg.installed:
     - pkgs:
-      - bash-helper
       - fix-filenames-broken-encoding
       - htop
       - mosh
