@@ -16,6 +16,7 @@ git.diff_highlight_module_installed:
     - user: root
     - group: salt
     - mode: 755
+    - backup: minion
     - require:
       - file: git.perl_library_directory_created
 
@@ -26,6 +27,7 @@ git.diff_highlight_script_installed:
     - user: root
     - group: salt
     - mode: 755
+    - backup: minion
     - require:
       - file: git.diff_highlight_module_installed
 
@@ -36,6 +38,7 @@ git.main_config_file_created:
     - user: root
     - group: salt
     - mode: 755
+    - backup: minion
     - require:
       - pkg: git.installed
       - file: git.diff_highlight_script_installed

@@ -30,14 +30,15 @@
 [core]
   autocrlf = input
   fileMode = false
+  pager = less --quit-if-one-screen --no-init
 [diff]
   compactionHeuristic = true
 [interactive]
   diffFilter = diff-highlight.pl
 [pager]
-  diff = diff-highlight.pl | less
-  log = diff-highlight.pl | less
-  show = diff-highlight.pl | less
+  diff = diff-highlight.pl | less --quit-if-one-screen --no-init
+  log = diff-highlight.pl | less --quit-if-one-screen --no-init
+  show = diff-highlight.pl | less --quit-if-one-screen --no-init
 [push]
   default = current
   recurseSubmodules = check
