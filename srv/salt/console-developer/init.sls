@@ -8,8 +8,9 @@ console-developer.packages_installed:
       - git-helper
     - require:
       - pkgrepo: software-for-life.repository_added
+      - pkg: git.installed
 
 console-developer.programs_configured:
-  test.nop: []
-  require:
-    - file: git.main_config_file_created
+  test.nop:
+    - require:
+      - file: git.main_config_file_created
