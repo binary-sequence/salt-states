@@ -1,9 +1,18 @@
 [global_config]
-  title_inactive_bg_color = "#9e9e9e"
+  title_transmit_bg_color = "#25548e"
   title_inactive_fg_color = "#383838"
-  title_transmit_bg_color = "#383838"
-  title_transmit_fg_color = "#9e9e9e"
+  title_inactive_bg_color = "#6391cd"
 [keybindings]
+[profiles]
+  [[default]]
+    use_system_font = False
+    background_darkness = 0.72
+    scrollback_lines = 5000
+    background_type = transparent
+    background_image = None
+    foreground_color = "#ffffff"
+    font = Monospace 10
+    scrollback_infinite = True
 [layouts]
   [[default]]
     [[[child1]]]
@@ -13,12 +22,3 @@
       parent = ""
       type = Window
 [plugins]
-[profiles]
-  [[default]]
-    background_color = "#401f30"
-    background_darkness = 0.88
-    background_image = None
-    background_type = transparent
-    foreground_color = "#ffffff"
-    scrollback_infinite = True
-    scrollback_lines = 5000

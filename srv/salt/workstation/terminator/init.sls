@@ -7,7 +7,7 @@ terminator.installed:
 
 terminator.config_directory_created:
   file.directory:
-    - name: /etc/software-for-life/terminator
+    - name: /usr/local/share/software-for-life/terminator
     - user: root
     - group: salt
     - mode: 755
@@ -17,11 +17,12 @@ terminator.config_directory_created:
 
 terminator.main_config_file_created:
   file.managed:
-    - name: /etc/software-for-life/terminator/config
+    - name: /usr/local/share/software-for-life/terminator/config
     - source: salt://workstation/terminator/config
     - user: root
     - group: root
     - mode: 644
+    - backup: minion
     - require:
       - pkg: terminator.installed
       - file: terminator.config_directory_created
@@ -38,10 +39,11 @@ terminator.user_config_directory_created:
 terminator.user_config_file_created:
   file.symlink:
     - name: /home/sergio/.config/terminator/config
-    - target: /etc/software-for-life/terminator/config
+    - target: /usr/local/share/software-for-life/terminator/config
     - user: sergio
     - group: users
     - mode: 600
+    - backup: minion
     - require:
       - file: terminator.user_config_directory_created
       - file: terminator.main_config_file_created
