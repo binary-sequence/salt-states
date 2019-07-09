@@ -7,11 +7,12 @@ tmux.installed:
 
 tmux.main_config_file_created:
   file.managed:
-    - name: /etc/software-for-life/tmux.conf
+    - name: /usr/local/share/software-for-life/tmux.conf
     - source: salt://console-admin/tmux/tmux.conf
     - user: root
     - group: salt
-    - mode: 755
+    - mode: 644
+    - backup: minion
     - require:
       - pkg: tmux.installed
       - file: software-for-life.config_directory_created
@@ -19,10 +20,11 @@ tmux.main_config_file_created:
 tmux.user_config_file_created:
   file.symlink:
     - name: /home/sergio/.tmux.conf
-    - target: /etc/software-for-life/tmux.conf
+    - target: /usr/local/share/software-for-life/tmux.conf
     - user: sergio
     - group: users
     - mode: 600
+    - backup: minion
     - require:
       - pkg: tmux.installed
       - file: tmux.main_config_file_created
