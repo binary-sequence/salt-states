@@ -39,13 +39,13 @@ function! SKEL_spec()
 endfunction
 
 " enable syntax highlighting
-" syntax on
+syntax on
 
 " automatically indent lines (default)
 " set noautoindent
 
 " select case-insenitiv search (not default)
-set ignorecase
+" set ignorecase
 
 " show cursor line and column in the status line
 set ruler
@@ -344,7 +344,62 @@ set nomodeline
 " Skeleton for spec files
 autocmd BufNewFile      *.spec  call SKEL_spec()
 
-source /etc/software-for-life/vimrc
-
 " get easier to use and more user friendly vim defaults
 " /etc/vimrc ends here
+
+" Automatically create a backup file with old content when saving new changes.
+set backup
+
+" Highlight the line where the cursor is
+set cursorline
+
+" Show line numbers at left margin
+set number
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" Set 7 lines to the cursor - when moving vertically using j/k
+set so=7
+
+" Highlight search results
+set hlsearch
+
+" Makes search act like search in modern browsers
+set incsearch
+
+" No annoying sound on errors
+set noerrorbells
+
+" Enable 256 colors palette in Gnome Terminal
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+
+try
+  colorscheme evening
+catch
+endtry
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+" Do not insert spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs ;)
+set smarttab
+
+" 1 tab == 2 spaces
+set shiftwidth=2
+set tabstop=2
+
+set ai "Auto indent
+set si "Smart indent
+set wrap "Wrap lines
+
+" Always show the status line
+set laststatus=2
