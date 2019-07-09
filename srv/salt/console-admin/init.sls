@@ -18,9 +18,9 @@ console-admin.packages_installed:
       - pkg: vim.installed
 
 console-admin.programs_configured:
-  test.nop: []
-  require:
-    - file: grc.user_apache_access_config_file_created
-    - file: grc.user_apache_error_config_file_created
-    - file: tmux.user_config_file_created
-    - file: vim.main_config_file_created
+  test.nop:
+    - require:
+      - file: grc.user_apache_access_config_file_created
+      - file: grc.user_apache_error_config_file_created
+      - file: tmux.user_config_file_created
+      - file: vim.main_config_file_created
