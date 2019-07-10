@@ -12,8 +12,8 @@ function uptime {
 
 }
 
-if [ -f ~/.bash_suse_aliases ]; then
-  source ~/.bash_suse_aliases
+if [ -f ~/.alias_suse ]; then
+  source ~/.alias_suse
 fi
 
 alias osc='osc -v'
