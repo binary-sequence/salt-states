@@ -1,0 +1,21 @@
+alias df='grc df -h'
+alias git-vamos='git stash save "git-vamos backup" && git rup && git co master && git pull && git co develop && git pull ; git bra'
+alias mount='grc mount'
+alias tail='grc tail'
+
+function uptime {
+  if [ "$1" == '-h' ]; then
+    echo -e "current time  time length  system up  number of users  avg 1, 5, 15 \n`/usr/bin/uptime`" | sed -e 's/  /\t /g' -e 's/,/\t/g' -e 's/ load average://'
+  else
+    /usr/bin/uptime $1
+  fi
+
+}
+
+if [ -f ~/.bash_suse_aliases ]; then
+  source ~/.bash_suse_aliases
+fi
+
+alias osc='osc -v'
+alias oscb='osc build --ccache'
+alias oscsd='osc service localrun download_files'
