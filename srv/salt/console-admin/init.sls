@@ -40,6 +40,28 @@ console-admin.bashrc_file_configured:
     - require:
       - file: console-admin.bashrc_file_created
 
+console-admin.bashrc_color_prompt_file_created:
+  file.managed:
+    - name: /usr/local/share/software-for-life/bashrc_color_prompt
+    - source: salt://console-admin/bashrc_color_prompt
+    - user: root
+    - group: root
+    - mode: 644
+    - backup: minion
+
+console-admin.bashrc_color_prompt_file_configured:
+  file.symlink:
+    - name: /home/sergio/.bashrc_color_prompt
+    - target: /usr/local/share/software-for-life/bashrc_color_prompt
+    - user: sergio
+    - group: users
+    - mode: 600
+    - backup: minion
+    - force: true
+    - require:
+      - file: console-admin.bashrc_color_prompt_file_created
+      - file: console-admin.bashrc_file_configured
+
 console-admin.alias_file_created:
   file.managed:
     - name: /usr/local/share/software-for-life/alias
@@ -88,6 +110,7 @@ console-admin.programs_configured:
       - file: console-admin.alias_file_configured
       - file: console-admin.alias_suse_file_configured
       - file: console-admin.bashrc_file_configured
+      - file: console-admin.bashrc_color_prompt_file_configured
       - file: grc.user_apache_access_config_file_created
       - file: grc.user_apache_error_config_file_created
       - file: tmux.user_config_file_created
