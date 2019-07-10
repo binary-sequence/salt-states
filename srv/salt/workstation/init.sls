@@ -4,7 +4,9 @@ include:
   - workstation.vscode
 
 workstation.packages_installed:
-  test.nop:
+  pkg.installed:
+    - pkgs:
+      - gnote
     - require:
       - pkg: shutter.installed
       - pkg: terminator.installed
