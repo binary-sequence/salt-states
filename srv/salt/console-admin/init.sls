@@ -8,8 +8,10 @@ console-admin.packages_installed:
   pkg.installed:
     - pkgs:
       - fix-filenames-broken-encoding
+      - fuse-exfat
       - htop
       - mosh
+      - rsync
       - tree
     - require:
       - pkgrepo: software-for-life.repository_added
