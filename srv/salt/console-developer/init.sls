@@ -14,3 +14,21 @@ console-developer.programs_configured:
   test.nop:
     - require:
       - file: git.main_config_file_created
+
+console-developer.developers_group_created:
+  group.present:
+    - name: developers
+    - addusers:
+      - sergio
+
+console-developer.dialout_group_exists:
+  group.present:
+    - name: dialout
+    - addusers:
+      - sergio
+
+console-developer.docker_group_exists:
+  group.present:
+    - name: docker
+    - addusers:
+      - sergio
