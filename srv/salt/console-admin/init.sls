@@ -1,6 +1,7 @@
 include:
   - software-for-life.repository_added
   - console-admin.grc
+  - console-admin.sshfs
   - console-admin.tmux
   - console-admin.vim
 
@@ -16,6 +17,7 @@ console-admin.packages_installed:
     - require:
       - pkgrepo: software-for-life.repository_added
       - pkg: grc.installed
+      - pkg: sshfs.installed
       - pkg: tmux.installed
       - pkg: vim.installed
 
