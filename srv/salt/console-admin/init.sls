@@ -12,6 +12,7 @@ console-admin.packages_installed:
       - fuse-exfat
       - htop
       - mosh
+      - nmap
       - rsync
       - tree
     - require:
