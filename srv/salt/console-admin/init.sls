@@ -107,6 +107,15 @@ console-admin.alias_suse_file_configured:
       - file: console-admin.alias_suse_file_created
       - file: console-admin.alias_file_configured
 
+console-admin.sudoers_file_configured:
+  file.managed:
+    - name: /etc/sudoers
+    - source: salt://console-admin/sudoers
+    - user: root
+    - group: root
+    - mode: 440
+    - backup: minion
+
 console-admin.programs_configured:
   test.nop:
     - require:
@@ -118,3 +127,9 @@ console-admin.programs_configured:
       - file: grc.user_apache_error_config_file_created
       - file: tmux.user_config_file_created
       - file: vim.main_config_file_created
+
+console-admin.sysadmins_group_created:
+  group.present:
+    - name: sysadmins
+    - addusers:
+      - sergio
