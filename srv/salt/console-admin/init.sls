@@ -16,6 +16,7 @@ console-admin.packages_installed:
       - rsync
       - tcpdump
       - tree
+      - youtube-dl
     - require:
       - pkgrepo: software-for-life.repository_added
       - pkg: grc.installed
