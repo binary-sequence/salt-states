@@ -7,6 +7,7 @@ workstation.packages_installed:
   pkg.installed:
     - pkgs:
       - gnote
+      - wireshark
     - require:
       - pkg: shutter.installed
       - pkg: terminator.installed
