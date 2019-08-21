@@ -14,6 +14,7 @@ console-admin.packages_installed:
       - mosh
       - nmap
       - rsync
+      - tcpdump
       - tree
     - require:
       - pkgrepo: software-for-life.repository_added
