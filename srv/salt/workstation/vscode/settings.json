@@ -2,6 +2,7 @@
 {
     "editor.insertSpaces": true,
     "editor.renderLineHighlight": "all",
+    "editor.renderWhitespace": "all",
     "editor.tabSize": 2,
     "files.autoSave": "onFocusChange",
     "files.insertFinalNewline": true,
