@@ -5,6 +5,7 @@ docker-admin.packages_installed:
   pkg.installed:
     - pkgs:
       - docker-helper
+      - docker-compose
     - require:
       - pkgrepo: software-for-life.repository_added
   service.running:
