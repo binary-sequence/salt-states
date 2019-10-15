@@ -23,4 +23,14 @@
     "*.INC*": "pl1",
     "*.INCLUDE*": "pl1",
     "*.JCL*": "jcl"
+  },
+  "[git-commit]": {
+    "editor.rulers": [50]
+  },
+  "[jcl]": {
+    "editor.rulers" : [71, 72, 80]
+  },
+  "[python]": {
+    "editor.rulers": [79, 120]
   }
+}
