@@ -32,5 +32,8 @@
   },
   "[python]": {
     "editor.rulers": [79, 120]
+  },
+  "[rexx]": {
+    "editor.rulers": [72]
   }
 }
